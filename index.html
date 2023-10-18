@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digital clock</title>
+    <!-- Linking your external JavaScript file -->
     <script src="script.js"></script>
+    <!-- Linking your external CSS file -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Container for the clock and button -->
     <div class="h">
+      <!-- Inner container -->
       <div class="container">
+        <!-- Digital clock display -->
         <div class="clock">
           <span id="hrs">00</span>
           <span>:</span>
@@ -17,14 +22,18 @@
           <span>:</span>
           <span id="secs">00</span>
         </div>
+        <!-- Button to change color -->
         <div class="button">Change color</div>
       </div>
     </div>
+    <!-- Inline JavaScript -->
     <script>
+      // Get references to the hour, minute, and second elements
       let hrs = document.getElementById("hrs");
       let mins = document.getElementById("mins");
       let secs = document.getElementById("secs");
 
+      // Update the clock every second
       setInterval(() => {
         let currentTime = new Date();
 
@@ -33,13 +42,22 @@
         secs.innerHTML = currentTime.getSeconds();
       }, 1000);
 
+      // Get reference to the button element
       let myButton = document.querySelector(".button");
+
+      // Function to handle button click
       function buttonClickHandler() {
+        // Get reference to the container element with class "h"
         var element = document.querySelector(".h");
+
+        // Change the background color using a linear gradient
         element.style.background = "linear-gradient(45deg, #FF5733, #33FF57)";
+
+        // Show an alert message
         alert("I hope you like mangoes");
       }
 
+      // Attach the buttonClickHandler function to the button's click event
       myButton.addEventListener("click", buttonClickHandler);
     </script>
   </body>
