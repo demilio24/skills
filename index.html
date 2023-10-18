@@ -23,7 +23,10 @@
           <span id="secs">00</span>
         </div>
         <!-- Button to change color -->
-        <div class="button">Change color</div>
+        <div class="button">Click me for a surprise</div>
+        <!-- Add this under the button div -->
+        <img id="monkeyGif" src="monkey.gif" alt="Monkey GIF" style="display:
+        none","align: center" />
       </div>
     </div>
     <!-- Inline JavaScript -->
@@ -52,6 +55,21 @@
 
         // Change the background color using a linear gradient
         element.style.background = "linear-gradient(45deg, #FF5733, #33FF57)";
+
+        // Create a new img element
+        var img = document.createElement("img");
+
+        // Set the src, alt, and style attributes
+        img.src = "monkey.gif";
+        img.alt = "Monkey GIF";
+        img.style.display = "block";
+
+        // Set a unique id for the image
+        img.id = "monkeyGif";
+
+        // Append the image to the container
+        var container = document.querySelector(".container");
+        container.appendChild(img);
 
         // Show an alert message
         alert("I hope you like mangoes");
