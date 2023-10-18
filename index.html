@@ -17,6 +17,7 @@
           <span>:</span>
           <span id="secs">00</span>
         </div>
+        <div class="button">Change color</div>
       </div>
     </div>
     <script>
@@ -31,6 +32,15 @@
         mins.innerHTML = currentTime.getMinutes();
         secs.innerHTML = currentTime.getSeconds();
       }, 1000);
+
+      let myButton = document.querySelector(".button");
+      function buttonClickHandler() {
+        var element = document.querySelector(".h");
+        element.style.background = "linear-gradient(45deg, #FF5733, #33FF57)";
+        alert("I hope you like mangoes");
+      }
+
+      myButton.addEventListener("click", buttonClickHandler);
     </script>
   </body>
 </html>
